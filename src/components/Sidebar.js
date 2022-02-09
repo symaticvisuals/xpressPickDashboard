@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 
 const sidebarToggle = React.createContext();
 function Sidebar() {
-  const [sidebar, setSidebar] = React.useState("16");
+  const [sidebar, setSidebar] = React.useState(16);
   const icons = [
     {
       name: "Dashboard",
@@ -71,16 +71,16 @@ function Sidebar() {
             <div
               className="flex active:animate-bounce transition ease-in-out delay-150"
               onClick={() => {
-                if (sidebar === "16") {
-                  setSidebar("60");
+                if (sidebar === 16) {
+                  setSidebar(60);
                 } else {
-                  setSidebar("16");
+                  setSidebar(16);
                 }
               }}>
               <HiMenuAlt2 className="text-[25px] text-white mb-8 cursor-pointer" />
               <h3
                 className={
-                  sidebar === "16"
+                  sidebar === 16
                     ? "hidden"
                     : "text-xl ml-2 font-sans text-skin-muted"
                 }>
@@ -121,7 +121,7 @@ const Icon = (props) => {
         }>
         <div className="flex justify-left items-center text-[25px] text-inherit mb-8 cursor-pointer active:animate-bounce">
           {props.icon}
-          <h3 className={sidebar === "16" ? "hidden" : "text-xl ml-2"}>
+          <h3 className={sidebar === 16 ? "hidden" : "text-xl ml-2"}>
             {props.name}
           </h3>
         </div>
