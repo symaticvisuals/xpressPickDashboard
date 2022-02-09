@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-text-dark: #093334;
+    --color-text-base: #0c4e5f;
+    --color-text-muted: #9ebec9;
+    --color-text-inverted: #e9eff1;
+    --color-text-secondary: #f46b29;
+    --color-fill-main: #e9eff1;
+    --color-fill: #093334;
+    --color-fill-muted: #e9eff1;
+    --color-fill-secondary: #f46b29;
+    --color-button-base: #093334;
+    --color-button-base-hover: #0e3b3c;
+  }
+  .theme-dark {
+    --color-text-dark: #e9eff1;
+    --color-text-base: #e9eff1;
+    --color-text-muted: #3e545c;
+    --color-text-inverted: #00212a;
+    --color-text-secondary: #ff7c3d;
+    --color-fill-main: #00212a;
+    --color-fill: #00212a;
+    --color-fill-muted: #01252f;
+    --color-fill-secondary: #ff7c3d;
+    --color-button-base: #ff7c3d;
+    --color-button-base-hover: #f46b29;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
