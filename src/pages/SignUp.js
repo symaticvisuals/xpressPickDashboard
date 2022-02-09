@@ -58,12 +58,12 @@ function SignUp() {
   };
 
   return (
-    <div className="bg-glassmorphism bg-right bg-no-repeat  min-h-screen bg-cover flex items-center pl-[10vw]">
+    <div className="bg-glassmorphism bg-right bg-no-repeat  min-h-screen bg-cover flex items-center pl-[10vw] sm:pl-0 box-border max-w-[100vw] overflow-hidden">
       <div>
-        <h1 className="font-sans text-5xl text-skin-secondary font-medium tracking-tight">
+        <h1 className="font-sans text-5xl text-skin-secondary font-medium tracking-tight sm:text-4xl sm:ml-2">
           Create An Account
         </h1>
-        <h3 className="font-sans text-xl text-skin-muted mb-4">
+        <h3 className="font-sans text-xl text-skin-muted mb-4 sm:text-lg sm:ml-2">
           Already have an Account?{" "}
           <Link to="/" className="hover:underline">
             Login
@@ -76,7 +76,7 @@ function SignUp() {
                 autoFocus
                 type="text"
                 placeholder="Full Name"
-                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 value={credentials.name}
                 onChange={(e) =>
                   setCredentials({ ...credentials, name: e.target.value })
@@ -85,17 +85,17 @@ function SignUp() {
               <input
                 type="email"
                 placeholder="Email ID"
-                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 value={credentials.email}
                 onChange={(e) =>
                   setCredentials({ ...credentials, email: e.target.value })
                 }
               />
-              <div>
+              <div className="flex items-center sm:w-11/12 sm:ml-2">
                 <input
                   type="text"
                   placeholder="+91"
-                  className="px-3 py-3 bg-skin-fill-muted w-14 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                  className="px-3 py-3 bg-skin-fill-muted w-14 rounded my-1  font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                   value={credentials.country_code}
                   onChange={(e) =>
                     setCredentials({
@@ -107,7 +107,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Mobile Number"
-                  className="px-4 py-3 bg-skin-fill-muted w-80 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-2"
+                  className="px-4 py-3 bg-skin-fill-muted w-80 rounded my-1  font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-2"
                   value={credentials.mobile_number}
                   onChange={(e) =>
                     setCredentials({
@@ -120,7 +120,7 @@ function SignUp() {
               <input
                 type="password"
                 placeholder="Password"
-                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 value={credentials.enc_password}
                 onChange={(e) =>
                   setCredentials({
@@ -132,7 +132,7 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="Address"
-                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 value={credentials.address}
                 onChange={(e) =>
                   setCredentials({ ...credentials, address: e.target.value })
@@ -142,7 +142,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="City"
-                  className="px-4 py-3 bg-skin-fill-muted w-60 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                  className="px-4 py-3 bg-skin-fill-muted w-60 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                   value={credentials.city}
                   onChange={(e) =>
                     setCredentials({ ...credentials, city: e.target.value })
@@ -151,7 +151,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Pincode"
-                  className="px-4 py-3 bg-skin-fill-muted w-32 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-4"
+                  className="px-4 py-3 bg-skin-fill-muted w-32 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-4"
                   value={credentials.pincode}
                   onChange={(e) =>
                     setCredentials({ ...credentials, pincode: e.target.value })
@@ -162,7 +162,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="State"
-                  className="px-4 py-3 bg-skin-fill-muted w-48 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                  className="px-4 py-3 bg-skin-fill-muted w-48 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                   value={credentials.state}
                   onChange={(e) =>
                     setCredentials({ ...credentials, state: e.target.value })
@@ -171,7 +171,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Country"
-                  className="px-4 py-3 bg-skin-fill-muted w-44 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-4"
+                  className="px-4 py-3 bg-skin-fill-muted w-44 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2 ml-4"
                   value={credentials.country}
                   onChange={(e) =>
                     setCredentials({ ...credentials, country: e.target.value })
@@ -181,7 +181,7 @@ function SignUp() {
               <input
                 type="text"
                 placeholder="Organization"
-                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 sm:w-11/12 sm:ml-2 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 value={credentials.organization_name}
                 onChange={(e) =>
                   setCredentials({
@@ -193,7 +193,7 @@ function SignUp() {
             </form>
             <button
               onClick={onSubmit}
-              className="px-4 py-3 bg-skin-button-base text-skin-inverted w-96 rounded my-1 font-sans font-medium">
+              className="px-4 py-3 bg-skin-button-base text-skin-inverted sm:w-11/12 sm:ml-2 w-96 rounded my-1 font-sans font-medium">
               Get OTP
             </button>
           </div>
