@@ -67,6 +67,8 @@ function TopBar() {
           </button>
         </div>
       </div>
+
+      {/* Wallet Popup */}
       {popup ? (
         <div className="flex justify-center">
           <div
@@ -74,15 +76,16 @@ function TopBar() {
             onClick={(e) => {
               e.preventDefault();
               setPopup(false);
-            }}></div>
+            }}
+          ></div>
           <div className="fixed w-96 top-24">
             <div className="bg-skin-fill py-5 rounded-t-2xl">
               <div className="mt-3 text-center">
-                <h3 className="text-2xl leading-6 font-sans font-medium text-skin-inverted">
+                <h3 className="text-2xl leading-6 font-medium text-skin-inverted">
                   Wallet
                 </h3>
                 <div className="px-7 py-3">
-                  <p className="text-sm text-skin-inverted font-sans">
+                  <p className="text-sm text-skin-inverted">
                     Wallet money is used for payment
                   </p>
                 </div>
@@ -90,17 +93,80 @@ function TopBar() {
             </div>
             <div className="bg-skin-fill-muted py-5 px-5 rounded-b-2xl">
               <div className="">
-                <h3 className="text-3xl leading-6 font-medium text-skin-dark flex items-end">
-                  <FaRupeeSign className="text-xl" />0
-                </h3>
-                <div className="mt-2 py-3">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-3xl leading-6 font-medium text-skin-dark flex items-end my-2">
+                    <FaRupeeSign className="text-xl" />0
+                  </h3>
+                  <Link
+                    to="passbook"
+                    className="cursor-pointer font-medium text-skin-dark flex items-end my-2"
+                    onClick={clickHandler}
+                  >
+                    <RiBillFill className="text-2xl" />
+                    Passbook
+                  </Link>
+                </div>
+                <form className="mt-2 py-3">
                   <p className="text-md text-skin-dark">
-                    Add money to your wallet using Razorpay
+                    Add money to your wallet
                   </p>
+                  <input
+                    type="text"
+                    placeholder="Amount"
+                    className="px-4 py-3 bg-skin-fill-muted w-64 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
+                    value={amount}
+                  />
+                  <div>
+                    <button
+                      className="px-2 py-1 bg-skin-button-base text-skin-inverted w-auto rounded mb-2 font-sans font-light mr-1 text-sm hover:bg-skin-button-base-hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setAmount("100");
+                      }}
+                    >
+                      100
+                    </button>
+                    <button
+                      className="px-2 py-1 bg-skin-button-base text-skin-inverted w-auto rounded mb-2 font-sans font-light mr-1 text-sm hover:bg-skin-button-base-hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setAmount("200");
+                      }}
+                    >
+                      200
+                    </button>
+                    <button
+                      className="px-2 py-1 bg-skin-button-base text-skin-inverted w-auto rounded mb-2 font-sans font-light mr-1 text-sm hover:bg-skin-button-base-hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setAmount("500");
+                      }}
+                    >
+                      500
+                    </button>
+                    <button
+                      className="px-2 py-1 bg-skin-button-base text-skin-inverted w-auto rounded mb-2 font-sans font-light mr-1 text-sm hover:bg-skin-button-base-hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setAmount("1000");
+                      }}
+                    >
+                      1000
+                    </button>
+                    <button
+                      className="px-2 py-1 bg-skin-button-base text-skin-inverted w-auto rounded mb-2 font-sans font-light mr-1 text-sm hover:bg-skin-button-base-hover"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setAmount("10000");
+                      }}
+                    >
+                      10,000
+                    </button>
+                  </div>
                   <button className="px-4 py-1 bg-skin-button-base text-skin-inverted w-auto rounded my-1 font-sans font-light mr-4 hover:bg-skin-button-base-hover">
                     Add Money
                   </button>
-                </div>
+                </form>
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ import SignUp from "../pages/SignUp";
 import Dashboard from "../pages/Dashboard";
 import Orders from "../pages/Orders";
 import Home from "../pages/Dashboard/Home";
+import Passbook from "../pages/Passbook";
 function WrapperRouter(props) {
   return (
     <>
@@ -25,6 +26,7 @@ function WrapperRouter(props) {
             <Route path="users" element={<Orders />} />
             <Route path="reports" element={<Orders />} />
             <Route path="support" element={<Orders />} />
+            <Route path="passbook" element={<Passbook />} />
           </Route>
         </Routes>
       </Router>

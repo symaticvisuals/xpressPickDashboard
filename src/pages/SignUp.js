@@ -69,7 +69,7 @@ function SignUp() {
             Login
           </Link>
         </h3>
-        {inputOTP ? (
+        {!inputOTP ? (
           <div>
             <form className="flex flex-col">
               <input
