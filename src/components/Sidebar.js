@@ -64,7 +64,11 @@ function Sidebar() {
   ];
   return (
     <div
-      className={`w-${sidebar} h-max-screen bg-skin-fill flex justify-center border-r border-base-dark sm:hidden`}>
+      className={
+        sidebar === 16
+          ? `w-16 h-max-screen bg-skin-fill flex justify-center border-r border-base-dark sm:hidden`
+          : `w-60 h-max-screen bg-skin-fill flex justify-center border-r border-base-dark sm:hidden`
+      }>
       <div className="fixed">
         <sidebarToggle.Provider value={{ sidebar, setSidebar }}>
           <div className="flex flex-col items-start justify-around  h-[100vh]">
