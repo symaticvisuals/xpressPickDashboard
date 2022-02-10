@@ -7,7 +7,13 @@ import * as animationData from "../assets/lf30_editor_t2l9yudc.json";
 
 import { Link } from "react-router-dom";
 function SignUp() {
-  const [inputOTP] = useState(true);
+  const [inputOTP, setInputOTP] = useState(false);
+
+  const checkStatus = (status, message) => {
+    if (status === 200 && message === "successful signUp") {
+      setInputOTP(true);
+    }
+  };
 
   const [credentials, setCredentials] = useState({
     name: "",
@@ -22,7 +28,6 @@ function SignUp() {
     country: "",
     organization_name: "",
   });
-
   const onSubmit = () => {
     Cookies.set("isLoggedIn", true);
     console.log(credentials);
@@ -42,7 +47,9 @@ function SignUp() {
         organization_name: credentials.organization_name,
       })
       .then((res) => {
-        console.log(res);
+        console.log(res.status);
+        console.log(res.data.message);
+        checkStatus(res.status, res.data.message);
         Cookies.set("jwtToken", res.data.data.jwtToken);
         Cookies.set("user", JSON.stringify(res.data.data));
       })
@@ -50,6 +57,13 @@ function SignUp() {
         console.log(err);
       });
   };
+
+  const [valueOTP, setValueOTP] = useState({
+    email: credentials.email,
+    OTP: "",
+  });
+  const resendOTP = () => {};
+  const validateOTP = () => {};
 
   const defaultOptions = {
     loop: false,
@@ -193,7 +207,8 @@ function SignUp() {
             </form>
             <button
               onClick={onSubmit}
-              className="px-4 py-3 bg-skin-button-base text-skin-inverted sm:w-11/12 sm:ml-2 w-96 rounded my-1 font-sans font-medium">
+              className="px-4 py-3 bg-skin-button-base text-skin-inverted sm:w-11/12 sm:ml-2 w-96 rounded my-1 font-sans font-medium"
+            >
               Get OTP
             </button>
           </div>
@@ -205,16 +220,22 @@ function SignUp() {
                 placeholder="Enter OTP"
                 className="px-4 py-3 bg-skin-fill-muted w-96 rounded my-1 font-sans focus:ring-0 focus:border-none focus:outline-base focus:outline-offset-0 mb-2"
                 //TODO: Validate OTP
+                value={valueOTP.OTP}
+                onChange={(e) =>
+                  setValueOTP({ ...valueOTP, OTP: e.target.value })
+                }
               />
             </form>
             <button
-              onClick={onSubmit}
-              className="px-4 py-3 bg-skin-button-base text-skin-inverted rounded my-1 font-sans font-medium mr-1">
+              onClick={resendOTP}
+              className="px-4 py-3 bg-skin-button-base text-skin-inverted rounded my-1 font-sans font-medium mr-1"
+            >
               Resend
             </button>
             <button
-              onClick={onSubmit}
-              className="px-4 py-3 bg-skin-button-base text-skin-inverted rounded my-1 font-sans font-medium ml-1">
+              onClick={validateOTP}
+              className="px-4 py-3 bg-skin-button-base text-skin-inverted rounded my-1 font-sans font-medium ml-1"
+            >
               Validate
             </button>
           </div>
