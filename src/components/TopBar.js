@@ -4,12 +4,18 @@ import logoDark from "../assets/images/logo-light.png";
 import { FaWallet, FaRupeeSign } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { RiBillFill } from "react-icons/ri";
 import { useState } from "react";
 import { modeProvider } from "../App";
 
 import { Link } from "react-router-dom";
 function TopBar() {
   const [popup, setPopup] = useState(false);
+  const [amount, setAmount] = useState("");
+  const clickHandler = () => {
+    setPopup(false);
+  };
+
   const { mode, setMode } = React.useContext(modeProvider);
   const changeMode = () => {
     if (mode === "theme-dark") {
@@ -62,7 +68,8 @@ function TopBar() {
           </div>
           <button
             onClick={changeMode}
-            className="sm:hidden px-4 py-1 bg-skin-button-base text-skin-inverted w-auto rounded my-1 font-sans font-light mr-4 hover:bg-skin-button-base-hover">
+            className="sm:hidden px-4 py-1 bg-skin-button-base text-skin-inverted w-auto rounded my-1 font-sans font-light mr-4 hover:bg-skin-button-base-hover"
+          >
             Mode
           </button>
         </div>
