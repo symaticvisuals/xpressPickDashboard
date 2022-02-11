@@ -66,14 +66,14 @@ function Sidebar() {
     <div
       className={
         sidebar === 16
-          ? `w-16 h-max-screen bg-skin-fill flex justify-center border-r border-base-dark sm:hidden`
-          : `w-60 h-max-screen bg-skin-fill flex justify-center border-r border-base-dark sm:hidden`
+          ? `w-16 h-max-screen bg-skin-fill flex justify-center  border-r border-base-dark sm:hidden`
+          : `w-60 h-max-screen bg-skin-fill flex justify-center border-r  border-base-dark sm:hidden`
       }>
-      <div className="fixed">
+      <div className="sticky overflow-y-auto">
         <sidebarToggle.Provider value={{ sidebar, setSidebar }}>
-          <div className="flex flex-col items-start justify-around  h-[100vh]">
+          <div className="flex flex-col items-start mt-[7vh]   my-auto ">
             <div
-              className="flex active:animate-bounce transition ease-in-out delay-150"
+              className="flex  transition ease-in-out delay-150"
               onClick={() => {
                 if (sidebar === 16) {
                   setSidebar(60);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 function ResetPassword() {
   return (
@@ -45,8 +45,7 @@ function ResetPassword() {
           </form>
           <button
             // onClick={onSubmit}
-            className="px-4 py-3 bg-skin-button-base text-skin-inverted w-96 sm:w-11/12 sm:ml-2 rounded my-1 font-sans font-medium"
-          >
+            className="px-4 py-3 bg-skin-button-base text-skin-inverted w-96 sm:w-11/12 sm:ml-2 rounded my-1 font-sans font-medium">
             Reset Password
           </button>
         </div>
