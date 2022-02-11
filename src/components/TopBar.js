@@ -11,6 +11,7 @@ import { modeProvider } from "../App";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { getApi } from "../utils/apis";
+import Cookies from "js-cookie";
 function TopBar() {
   const [popup, setPopup] = useState(false);
   const [amount, setAmount] = useState("");
@@ -18,13 +19,25 @@ function TopBar() {
     setPopup(false);
   };
 
-  // const [walletBallance, setWalletBallance] = useState("0");
+  const [walletBallance, setWalletBallance] = useState("0");
   const fetchData = () => {
-    axios
-      .get(getApi("/wallet/getBallance"))
+    // axios
+    //   .get(getApi("/wallet/getBallance"))
+    //   .then((res) => {
+    //     console.log(res);
+    //     // setWalletBalence(res.data.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    axios({
+      method: "post",
+      url: getApi("/wallet/getBallance"),
+      headers: { Authorization: Cookies.get("access_token") },
+    })
       .then((res) => {
         console.log(res);
-        // setWalletBalence(res.data.data);
+        setWalletBallance(res.data.data);
       })
       .catch((error) => {
         console.log(error);
