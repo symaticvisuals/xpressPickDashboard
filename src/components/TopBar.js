@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "../assets/images/logo-dark.png";
 import logoDark from "../assets/images/logo-light.png";
 import { FaWallet, FaRupeeSign } from "react-icons/fa";
@@ -9,12 +9,44 @@ import { useState } from "react";
 import { modeProvider } from "../App";
 
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { getApi } from "../utils/apis";
+import Cookies from "js-cookie";
 function TopBar() {
   const [popup, setPopup] = useState(false);
   const [amount, setAmount] = useState("");
   const clickHandler = () => {
     setPopup(false);
   };
+
+  const [walletBallance, setWalletBallance] = useState("0");
+  const fetchData = () => {
+    // axios
+    //   .get(getApi("/wallet/getBallance"))
+    //   .then((res) => {
+    //     console.log(res);
+    //     // setWalletBalence(res.data.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    axios({
+      method: "post",
+      url: getApi("/wallet/getBallance"),
+      headers: { Authorization: Cookies.get("access_token") },
+    })
+      .then((res) => {
+        console.log(res);
+        setWalletBallance(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const { mode, setMode } = React.useContext(modeProvider);
   const changeMode = () => {

@@ -21,8 +21,11 @@ function SignIn() {
       })
       .then((res) => {
         console.log(res);
-        Cookies.set("jwtToken", res.data.data.jwtToken);
-        Cookies.set("user", JSON.stringify(res.data.data));
+        Cookies.set("access_token", res.data.data.access_token, {
+          expires: 7,
+          path: "",
+        });
+        // Cookies.set("user", JSON.stringify(res.data.data));
       })
       .catch((err) => {
         console.log(err);
@@ -33,11 +36,11 @@ function SignIn() {
     <div className="p-4 box-border max-w-screen overflow-hidden">
       <div className="bg-light min-h-screen bg-cover flex items-center pl-[10vw] sm:pl-0 w-screen">
         <div>
-          <h1 className="font-sans text-6xl ml-2 text-skin-secondary font-medium tracking-tight">
+          <h1 className="font-sans text-6xl text-skin-secondary font-medium tracking-tight">
             Login
           </h1>
-          <h3 className="font-sans text-xl text-skin-muted mb-4 ml-2">
-            Don't have an Account?{" "}
+          <h3 className="font-sans text-xl text-skin-muted mb-4">
+            Don't have an Account?&nbsp;
             <Link to="/signup" className="hover:underline">
               Create one
             </Link>
@@ -62,17 +65,20 @@ function SignIn() {
                 setCredentials({ ...credentials, password: e.target.value })
               }
             />
-            <div className="flex justify-between items-center ml-2">
+            <div className="flex justify-between items-center">
               <label className="my-1 font-sans">
                 <input type="checkbox" className="" />
                 &nbsp; Remember me
               </label>
-              <h6 className="font-sans">Forgot Password?</h6>
+              <Link to="/forgot-password" className="font-sans">
+                Forgot Password?
+              </Link>
             </div>
           </form>
           <button
             onClick={onSubmit}
-            className="px-4 py-3 bg-skin-button-base text-skin-inverted w-96 sm:w-11/12 sm:ml-2 rounded my-1 font-sans font-medium">
+            className="px-4 py-3 bg-skin-button-base text-skin-inverted w-96 sm:w-11/12 rounded my-1 font-sans font-medium"
+          >
             Login
           </button>
         </div>

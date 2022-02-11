@@ -9,6 +9,8 @@ import CustomOrders from "../components/Orders/CustomOrders";
 import Home from "../pages/Dashboard/Home";
 import Passbook from "../pages/Passbook";
 import Orders from "../pages/Orders";
+import ForgotPassword from "../pages/ForgotPassword";
+import ResetPassword from "../pages/ResetPassword";
 function WrapperRouter(props) {
   return (
     <>
@@ -29,6 +31,8 @@ function WrapperRouter(props) {
             <Route path="support" element={<CustomOrders />} />
             <Route path="passbook" element={<Passbook />} />
           </Route>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </Router>
     </>
