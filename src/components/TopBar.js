@@ -19,7 +19,7 @@ function TopBar() {
     setPopup(false);
   };
 
-  const [walletBallance, setWalletBallance] = useState("0");
+  const [, setWalletBallance] = useState("0");
   const fetchData = () => {
     // axios
     //   .get(getApi("/wallet/getBallance"))
@@ -100,8 +100,7 @@ function TopBar() {
           </div>
           <button
             onClick={changeMode}
-            className="sm:hidden px-4 py-1 bg-skin-button-base text-skin-inverted w-auto rounded my-1 font-sans font-light mr-4 hover:bg-skin-button-base-hover"
-          >
+            className="sm:hidden px-4 py-1 bg-skin-button-base text-skin-inverted w-auto rounded my-1 font-sans font-light mr-4 hover:bg-skin-button-base-hover">
             Mode
           </button>
         </div>
@@ -115,8 +114,7 @@ function TopBar() {
             onClick={(e) => {
               e.preventDefault();
               setPopup(false);
-            }}
-          ></div>
+            }}></div>
           <div className="fixed w-96 top-24">
             <div className="bg-skin-fill py-5 rounded-t-2xl">
               <div className="mt-3 text-center">
@@ -139,8 +137,7 @@ function TopBar() {
                   <Link
                     to="passbook"
                     className="cursor-pointer font-medium text-skin-dark flex items-end my-2"
-                    onClick={clickHandler}
-                  >
+                    onClick={clickHandler}>
                     <RiBillFill className="text-2xl" />
                     Passbook
                   </Link>
@@ -161,8 +158,7 @@ function TopBar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setAmount("100");
-                      }}
-                    >
+                      }}>
                       100
                     </button>
                     <button
@@ -170,8 +166,7 @@ function TopBar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setAmount("200");
-                      }}
-                    >
+                      }}>
                       200
                     </button>
                     <button
@@ -179,8 +174,7 @@ function TopBar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setAmount("500");
-                      }}
-                    >
+                      }}>
                       500
                     </button>
                     <button
@@ -188,8 +182,7 @@ function TopBar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setAmount("1000");
-                      }}
-                    >
+                      }}>
                       1000
                     </button>
                     <button
@@ -197,8 +190,7 @@ function TopBar() {
                       onClick={(e) => {
                         e.preventDefault();
                         setAmount("10000");
-                      }}
-                    >
+                      }}>
                       10,000
                     </button>
                   </div>
