@@ -5,9 +5,10 @@ import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
 
 import Dashboard from "../pages/Dashboard";
-import Orders from "../pages/Orders";
+import CustomOrders from "../components/Orders/CustomOrders";
 import Home from "../pages/Dashboard/Home";
 import Passbook from "../pages/Passbook";
+import Orders from "../pages/Orders";
 function WrapperRouter(props) {
   return (
     <>
@@ -15,17 +16,17 @@ function WrapperRouter(props) {
         <Routes>
           <Route path="/" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/orders" element={<CustomOrders />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="home" element={<Home />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="products" element={<Orders />} />
-            <Route path="invoices" element={<Orders />} />
-            <Route path="customers" element={<Orders />} />
-            <Route path="settings" element={<Orders />} />
-            <Route path="users" element={<Orders />} />
-            <Route path="reports" element={<Orders />} />
-            <Route path="support" element={<Orders />} />
+            <Route path="products" element={<CustomOrders />} />
+            <Route path="invoices" element={<CustomOrders />} />
+            <Route path="customers" element={<CustomOrders />} />
+            <Route path="settings" element={<CustomOrders />} />
+            <Route path="users" element={<CustomOrders />} />
+            <Route path="reports" element={<CustomOrders />} />
+            <Route path="support" element={<CustomOrders />} />
             <Route path="passbook" element={<Passbook />} />
           </Route>
         </Routes>
