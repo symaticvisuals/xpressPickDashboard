@@ -11,6 +11,7 @@ import Passbook from "../pages/Passbook";
 import Orders from "../pages/Orders";
 import ForgotPassword from "../pages/ForgotPassword";
 import ResetPassword from "../pages/ResetPassword";
+import Tools from "../pages/Dashboard/Tools";
 function WrapperRouter(props) {
   return (
     <>
@@ -25,7 +26,7 @@ function WrapperRouter(props) {
             <Route path="products" element={<CustomOrders />} />
             <Route path="invoices" element={<CustomOrders />} />
             <Route path="customers" element={<CustomOrders />} />
-            <Route path="settings" element={<CustomOrders />} />
+            <Route path="tools" element={<Tools />} />
             <Route path="users" element={<CustomOrders />} />
             <Route path="reports" element={<CustomOrders />} />
             <Route path="support" element={<CustomOrders />} />

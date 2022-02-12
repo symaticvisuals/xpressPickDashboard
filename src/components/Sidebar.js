@@ -42,9 +42,9 @@ function Sidebar() {
       path: "customers",
     },
     {
-      name: "Settings",
+      name: "Tools",
       icon: <BsTools />,
-      path: "settings",
+      path: "tools",
     },
     {
       name: "Users",
@@ -68,7 +68,8 @@ function Sidebar() {
         sidebar === 16
           ? `w-16 h-max-screen bg-skin-fill flex justify-center  border-r border-base-dark sm:hidden`
           : `w-60 h-max-screen bg-skin-fill flex justify-center border-r  border-base-dark sm:hidden`
-      }>
+      }
+    >
       <div className="sticky overflow-y-auto">
         <sidebarToggle.Provider value={{ sidebar, setSidebar }}>
           <div className="flex flex-col items-start mt-[7vh]   my-auto ">
@@ -80,14 +81,16 @@ function Sidebar() {
                 } else {
                   setSidebar(16);
                 }
-              }}>
+              }}
+            >
               <HiMenuAlt2 className="text-[25px] text-white mb-8 cursor-pointer" />
               <h3
                 className={
                   sidebar === 16
                     ? "hidden"
                     : "text-xl ml-2 font-sans text-skin-muted"
-                }>
+                }
+              >
                 Menu
               </h3>
             </div>
@@ -122,7 +125,8 @@ const Icon = (props) => {
         to={`${props.path}`}
         className={({ isActive }) =>
           isActive ? "text-white" : "text-skin-muted"
-        }>
+        }
+      >
         <div className="flex justify-left items-center text-[25px] text-inherit mb-8 cursor-pointer active:animate-bounce">
           {props.icon}
           <h3 className={sidebar === 16 ? "hidden" : "text-xl ml-2"}>
