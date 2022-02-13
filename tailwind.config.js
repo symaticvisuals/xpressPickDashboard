@@ -30,6 +30,7 @@ module.exports = {
           fill: "var(--color-fill)",
           "fill-main": "var(--color-fill-main)",
           "fill-muted": "var(--color-fill-muted)",
+          "fill-muted-dark": "var(--color-text-muted)",
           "fill-secondary": "var(--color-fill-secondary)",
           "button-base": "var(--color-button-base)",
           "button-base-hover": "var(--color-button-base-hover)",
